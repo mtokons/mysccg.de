@@ -1,0 +1,124 @@
+.network {
+  padding: 120px 0;
+  background: var(--black);
+}
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.header .section-subtitle { margin: 0 auto; }
+
+.regions {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 80px;
+}
+.regionCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s var(--ease-out);
+  cursor: default;
+}
+.regionCard:hover {
+  border-color: rgba(201,168,76,0.25);
+  transform: translateY(-4px);
+  background: var(--surface);
+}
+.regionFlag {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.regionName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.regionCountries {
+  font-size: 0.72rem;
+  color: var(--subtle);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.regionDivider {
+  width: 30px;
+  height: 1px;
+  background: var(--border);
+  margin: 12px auto;
+}
+.regionLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.regionTalent {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* PARTNERS */
+.partnersSection {
+  padding-top: 60px;
+  border-top: 1px solid var(--border);
+}
+.partnersHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.partnersNote {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.partnerBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+.partnerBadge:hover {
+  border-color: rgba(201,168,76,0.2);
+  background: var(--surface);
+}
+.partnerName {
+  font-family: var(--font-impact);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+.partnerType {
+  font-size: 0.7rem;
+  color: var(--subtle);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .regions { grid-template-columns: repeat(2, 1fr); }
+  .regions .regionCard:last-child { grid-column: 1 / -1; }
+  .partnersGrid { grid-template-columns: repeat(2, 1fr); }
+  .partnersHeader { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

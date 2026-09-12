@@ -1,0 +1,134 @@
+.footer {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 40px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  margin-bottom: 60px;
+}
+
+.brand {}
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.logoMark {
+  font-family: var(--font-impact);
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  line-height: 1;
+}
+.logoSub {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.brandTagline {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+.social {
+  display: flex;
+  gap: 8px;
+}
+.socialBtn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.socialBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.col {}
+.colTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.colLink {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--subtle);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+.colLink:hover { color: var(--gold); }
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 28px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.copy {
+  font-size: 0.78rem;
+  color: var(--subtle);
+  flex: 1;
+}
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+}
+.bottomLink {
+  font-size: 0.75rem;
+  color: var(--subtle);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.bottomLink:hover { color: var(--muted); }
+.ikbBadgeSmall {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 4px 10px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .top { grid-template-columns: 1fr; gap: 40px; }
+  .cols { grid-template-columns: repeat(2, 1fr); }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+}

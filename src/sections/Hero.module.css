@@ -1,0 +1,260 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,108,255,0.05) 0%, transparent 50%),
+              var(--black);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gradLeft {
+  position: absolute;
+  left: -200px; top: 0; bottom: 0;
+  width: 500px;
+  background: radial-gradient(ellipse at left, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.gradBottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 300px;
+  background: linear-gradient(to top, var(--black), transparent);
+  pointer-events: none;
+}
+
+/* DECORATIVE RINGS */
+.ring1 {
+  position: absolute;
+  right: -100px; top: 50%;
+  transform: translateY(-50%);
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+  pointer-events: none;
+  animation: rotate-slow 40s linear infinite;
+}
+.ring2 {
+  position: absolute;
+  right: -60px; top: 50%;
+  transform: translateY(-50%);
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.04);
+  pointer-events: none;
+  animation: rotate-slow 25s linear infinite reverse;
+}
+.orbitDot {
+  position: absolute;
+  right: 200px; top: 50%;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--gold);
+  animation: orbit 20s linear infinite;
+  transform-origin: 0 0;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 0 24px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 7px 18px;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 100px;
+  background: rgba(201,168,76,0.06);
+  margin-bottom: 32px;
+}
+.badgeDot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse-gold 2s infinite;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.headlineSmall {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.headlineBig {
+  font-family: var(--font-impact);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.headlineWord {
+  font-family: var(--font-impact);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.wordVisible { opacity: 1; transform: translateY(0); }
+.wordFade { opacity: 0; transform: translateY(-15px); }
+
+.sub {
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.playBtn {
+  width: 28px; height: 28px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(10px);
+}
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px;
+  border-right: 1px solid var(--border);
+}
+.stat:last-child { border-right: none; }
+.statNum {
+  font-family: var(--font-impact);
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* TICKER */
+.ticker {
+  position: absolute;
+  bottom: 60px;
+  left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  z-index: 10;
+  padding: 0 24px;
+}
+.tickerLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--subtle);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tickerTrack {
+  display: flex;
+  gap: 0;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+}
+.tickerItem {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0 28px;
+  border-left: 1px solid var(--border);
+}
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SCROLL HINT */
+.scrollHint {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  color: var(--subtle);
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ENTER ANIMATIONS */
+.fadeUp {
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) forwards;
+}
+
+@media (max-width: 768px) {
+  .stats { flex-wrap: wrap; }
+  .stat { min-width: 50%; border-bottom: 1px solid var(--border); }
+  .ring1, .ring2, .orbitDot { display: none; }
+  .ctas { flex-direction: column; align-items: stretch; }
+  .ticker { display: none; }
+}
