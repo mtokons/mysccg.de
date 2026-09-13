@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private keys and secrets
+*.key
+*.pem
+SSS/
+*.wpress
+
